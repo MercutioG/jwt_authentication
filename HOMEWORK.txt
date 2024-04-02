@@ -1,0 +1,4 @@
+Modify to do:
+Produce a profile page and login page and keep a home page
+Create an if statement to check for a specific username and password and redirects to the homepage if wrong and redirects to the profile page of the username if right
+Make your secret a .env variable

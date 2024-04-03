@@ -23,15 +23,16 @@ export async function decrypt(input: string) : Promise<any> {
 
 export async function login(formData: FormData) {
   // Verify credentials && get the user
-
   const user = { email: formData.get("email"), password: formData.get("password"), name: "John" };
 
   // Create the session
-  const expires = new Date(Date.now() + 50 * 1000);
-  const session = await encrypt({ user, expires });
+  if(user.email == "john@doe" && user.password == "johndoe"){
+    const expires = new Date(Date.now() + 50 * 1000);
+    const session = await encrypt({ user, expires });
 
-  // Save the session in a cookie
-  cookies().set("session", session, { expires, httpOnly: true });
+    // Save the session in a cookie
+    cookies().set("session", session, { expires, httpOnly: true });
+  }
 }
 
 export async function logout() {

@@ -8,7 +8,11 @@ export default async function Home() {
       <form action={async (formdata) => {
         'use server';
         await login(formdata);
-        redirect("/");
+        if(!session){
+          redirect('/');
+        }else{
+          redirect('/home/');
+        }
       }}>
         <input type="email" name='email' id='email' />
         <input type="password" name='password' id='password' />
@@ -22,7 +26,6 @@ export default async function Home() {
       }}>
         <button type='submit'>Logout</button>
       </form>
-      <pre>{JSON.stringify(session,null,2)}</pre>
     </section>
   )
 }

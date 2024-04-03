@@ -26,7 +26,7 @@ export async function login(formData: FormData) {
   const user = { email: formData.get("email"), password: formData.get("password"), name: "John" };
 
   // Create the session
-  if(user.email == "john@doe" && user.password == "johndoe"){
+  if(user.email === process.env.SECRET_USERNAME && user.password === process.env.SECRET_PASSWORD) {
     const expires = new Date(Date.now() + 50 * 1000);
     const session = await encrypt({ user, expires });
 

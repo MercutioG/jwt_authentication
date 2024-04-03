@@ -1,5 +1,5 @@
 import {redirect} from 'next/navigation';
-import {getSession, login, logout} from './lib'
+import {getSession, login} from './lib'
 
 export default async function Home() {
   const session = await getSession();
@@ -19,13 +19,7 @@ export default async function Home() {
         <button type='submit'>Login</button>
       </form>
 
-      <form action={async (formdata) => {
-        'use server';
-        await logout();
-        redirect('/');
-      }}>
-        <button type='submit'>Logout</button>
-      </form>
+      <h1>PLZ NOTE THE USERNAME IS NOT "john@doe" AND THE PASSWORD IS NOT "johndoe"</h1>
     </section>
   )
 }

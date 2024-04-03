@@ -19,7 +19,7 @@ export default async function Home() {
         <button type='submit'>Login</button>
       </form>
 
-      <h1>PLZ NOTE THE USERNAME IS NOT "john@doe" AND THE PASSWORD IS NOT "johndoe"</h1>
+      <h1>PLZ NOTE THE USERNAME IS NOT &#34;john@doe&#34; AND THE PASSWORD IS NOT &#34;johndoe&#34;</h1>
     </section>
   )
 }

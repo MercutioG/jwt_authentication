@@ -8,7 +8,11 @@ export default async function Home() {
       <form action={async (formdata) => {
         'use server';
         await login(formdata);
-        redirect('/');
+        if(!session){
+          redirect('/');
+        }else{
+          redirect('/home/');
+        }
       }}>
         <input type="email" name='email' id='email' />
         <input type="password" name='password' id='password' />

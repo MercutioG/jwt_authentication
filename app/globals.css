@@ -105,3 +105,30 @@ a {
     color-scheme: dark;
   }
 }
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  width: 80vw;
+
+  margin: 10vw;
+
+  input{
+    width: 50%;
+    height: 3vw;
+    margin: 1vw;
+    padding: 1vw;
+    font-size: 1.25vw;
+    border-radius: 3vw;
+    border: rgb(110, 200, 255) solid 2px;
+    background-color: #2b2a4a;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  background-color: red;
+}

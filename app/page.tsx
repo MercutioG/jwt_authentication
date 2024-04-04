@@ -1,25 +1,22 @@
+import Link from "next/link"
 import {redirect} from 'next/navigation';
-import {getSession, login} from './lib'
+import {logout} from './lib'
 
-export default async function Home() {
-  const session = await getSession();
+const Home = () => {
   return (
-    <section>
-      <form action={async (formdata) => {
-        'use server';
-        await login(formdata);
-        if(!session){
-          redirect('/');
-        }else{
-          redirect('/home/');
-        }
-      }}>
-        <input type="email" name='email' id='email' />
-        <input type="password" name='password' id='password' />
-        <button type='submit'>Login</button>
-      </form>
+  <>
+    <div>THis is like the home page or whaetver so like go to this page  but be warned if u not logged in u wull have to log in</div>
+    <button><Link href="/user">User Page I hope ur logged in :P</Link></button>
 
-      <h1>PLZ NOTE THE USERNAME IS NOT &#34;john@doe&#34; AND THE PASSWORD IS NOT &#34;johndoe&#34;</h1>
-    </section>
+    <form action={async (formdata) => {
+        'use server';
+        await logout();
+        redirect('/login/');
+      }}>
+        <button type='submit'>Logout</button>
+      </form>
+  </>
   )
 }
+
+export default Home

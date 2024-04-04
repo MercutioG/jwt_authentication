@@ -3,7 +3,7 @@ import {getSession, logout} from '../lib'
 
 export default async function User() {
   const session = await getSession();
-  if(!session) redirect("/");
+  if(!session) redirect("/login");
   let user = session?.user
   return (
     <div>

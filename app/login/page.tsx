@@ -15,13 +15,15 @@ export default async function Home() {
           redirect('/home/');
         }
       }}>
-        <input type="email" name='email' id='email' required />
-        <input type="password" name='password' id='password' required />
-        <button type='submit'>Login</button>
-        <button type='button'><Link href='/'>Home</Link></button>
+        <h1>JWT Example Login</h1>
+        <input type="email" name='email' id='email' required placeholder='Username'/>
+        <input type="password" name='password' id='password' required placeholder='Password'/>
+        <div>
+          <button type='submit'>Login</button>
+          <Link href='/' className='link-btn'><button type='button'>Home</button></Link>
+        </div>
       </form>
-
-      <h1>PLZ NOTE THE USERNAME IS NOT &#34;john@doe&#34; AND THE PASSWORD IS NOT &#34;johndoe&#34;</h1>
+      <h6>PLZ NOTE THE USERNAME IS NOT &#34;john@doe&#34; AND THE PASSWORD IS NOT &#34;johndoe&#34;</h6>
     </section>
   )
 }

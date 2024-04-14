@@ -185,7 +185,7 @@ a {
     margin-bottom: 1vw;
   }
   button {
-    width: 20%;
+    width: 20vw;
     height: 5vw;
     font-size: 2vw;
     border-radius: 1vw;
@@ -199,6 +199,40 @@ a {
     cursor: pointer;
     &:hover {
       transform: scale(1.1);
+    }
+  }
+}
+
+.userpage-btn {
+  width: 22vw;
+  display: flex;
+  justify-content: center;
+}
+
+.user-data {
+  width: 100vw;
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  form {
+    button {
+      width: 20vw;
+      height: 5vw;
+      font-size: 2vw;
+      border-radius: 1vw;
+      border: none;
+      margin: 1vw;
+      background-image: linear-gradient(to bottom, #67bbff, #4284ff);
+  
+      transform: scale(1);
+      transition: 0.25s;
+  
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 }

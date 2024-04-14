@@ -1,6 +1,7 @@
 import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
+import data from "./data";
 
 // Make secret
 const secretKey = process.env.SECRET_KEY;
@@ -22,11 +23,15 @@ export async function decrypt(input: string) : Promise<any> {
 }
 
 export async function login(formData: FormData) {
-  // Verify credentials && get the user
-  const user = { email: formData.get("email"), password: formData.get("password"), name: "John" };
+  // Get the email and password from the form data
+  const email = formData.get("email");
+  const password = formData.get("password");
 
-  // Create the session
-  if(user.email === process.env.SECRET_USERNAME && user.password === process.env.SECRET_PASSWORD) {
+  // Find the user in the data array
+  const user = data.find((user) => user.email === email && user.password === password);
+
+  // If user exists, create session
+  if (user) {
     const expires = new Date(Date.now() + 50 * 1000);
     const session = await encrypt({ user, expires });
 

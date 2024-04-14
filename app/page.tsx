@@ -19,7 +19,7 @@ export default async function Home() {
           redirect('/login/');
         }}>
           <h1>JWT Practice Homepage</h1>
-          {(session)? <button><Link href="/user">User Page</Link></button> : <p>Login to view the user page.</p>}
+          {(session)? <Link href="/user" className="userpage-btn"><button type="button">User Page</button></Link> : <p>Login to view the user page.</p>}
           <button type='submit'>{button}</button>
         </form>
     </div>
